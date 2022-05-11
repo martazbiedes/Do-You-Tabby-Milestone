@@ -1,0 +1,96 @@
+/* for sizing of box so nothing overflows */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* so colors don't change till needed */
+  :root {
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+  }
+  
+  /* body alignment and color */
+  body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: lavender;
+  }
+  
+  /* defning correct answer color */
+  body.correct {
+    --hue: var(--hue-correct);
+  }
+  
+  /* defining wrong answer color */
+  body.wrong {
+    --hue: var(--hue-wrong);
+  }
+  
+  /* styling the trivia box to make it pretty  */
+  .container {
+    width: 800px;
+    max-width: 80%;
+    background-color: rgb(243, 199, 118);
+    border: blueviolet;
+    border-style: double;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+  }
+  
+  /* button display and spacing */
+  .btn-grid {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  /* button coloring */
+  .btn {
+    --hue: var(--hue-neutral);
+    border: 1px solid blueviolet;
+    background-color: palevioletred;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+  }
+  
+  .btn:hover {
+    border-color: white;
+  }
+  
+  /* if answer correct it'll be light green*/
+  .btn.correct {
+    --hue: var(--hue-correct);
+    color: lightgreen;
+  }
+  
+  /* if answer wrong it'll be orange */
+  .btn.wrong {
+    --hue: var(--hue-wrong);
+    color: orange;
+  }
+  
+  .start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hide {
+    display: none;
+  }
